@@ -74,6 +74,47 @@ class play:
                         count = 1
         
         # check diagonals
+        for x in range(6):
+            token = None
+            count = 0
+            for y in range(6):
+                column = x+y-2
+                row = y
+                if column >= 0 and column<7:
+                    cell = board[column][row]
+                    if cell is None:
+                        token = None
+                        count = 0
+                    else:
+                        if cell == token:
+                            count += 1
+                            if count == 4:
+                                return token
+                        else:
+                            token = cell
+                            count = 1
+        for x in range(6):
+            token = None
+            count = 0
+            for y in range(6):
+                column = x-y+3
+                row = y
+                if column >= 0 and column<7:
+                    cell = board[column][row]
+                    if cell is None:
+                        token = None
+                        count = 0
+                    else:
+                        if cell == token:
+                            count += 1
+                            if count == 4:
+                                return token
+                        else:
+                            token = cell
+                            count = 1
+                        
+            
+        
         return None
             
             

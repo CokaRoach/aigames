@@ -2,7 +2,7 @@ from AiC4 import AiC4
 
 class Doofus(AiC4):
     def __init__(self):
-        self.pos = 0
+        self.pos = -1
     
     def takeTurn(self, board):
         self.pos += 1
