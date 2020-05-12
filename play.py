@@ -29,15 +29,19 @@ class play:
     def printBoard(self, board):
         none_code = " "
         player_codes = ["O","#"]
+        header = "+-------+"
+        print(header)
         for y in range(6)[::-1]:
-            row = ""
+            row = "|"
             for x in range(7):
                 cell = board[x][y]
                 if cell is None:
                     row += none_code
                 else:
                     row += player_codes[cell]
+            row += "|"
             print(row)
+        print(header)
     
     def checkWin(self, board):
         # check columns
@@ -55,11 +59,12 @@ class play:
                 else:
                     token = cell
                     count = 1
+
         # check rows
         for y in range(6):
             token = board[0][y]
             count = 1
-            for x in range(0,7):
+            for x in range(1,7):
                 cell = board[x][y]
                 if cell is None:
                     token = None
